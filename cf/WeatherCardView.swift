@@ -4,8 +4,6 @@
 //
 //  Created by Jack Howard on 8/3/25.
 //
-
-
 import SwiftUI
 
 struct WeatherCardView: View {
@@ -20,20 +18,20 @@ struct WeatherCardView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
 
-            HStack(spacing: 40) {
-                VStack {
-                    Text("Fahrenheit")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                    Text(temperatureF)
-                        .font(.system(size: 48, weight: .bold))
-                }
-
+            VStack(spacing: 12) {
                 VStack {
                     Text("Celsius")
                         .font(.caption)
                         .foregroundColor(.secondary)
                     Text(temperatureC)
+                        .font(.system(size: 48, weight: .bold))
+                }
+
+                VStack {
+                    Text("Fahrenheit")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text(temperatureF)
                         .font(.system(size: 48, weight: .bold))
                 }
             }
@@ -42,7 +40,11 @@ struct WeatherCardView: View {
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 24)
-                .fill(Color(.systemBackground))
+                .fill(Color(uiColor: .secondarySystemBackground))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color.secondary.opacity(0.2), lineWidth: 1)
+                )
                 .shadow(radius: 10)
         )
         .padding(.horizontal)

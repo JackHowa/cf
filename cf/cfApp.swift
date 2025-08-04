@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct cfApp: App {
     
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()

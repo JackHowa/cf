@@ -1,38 +1,47 @@
-//
-//  ContentView.swift
-//  cf
-//
-//  Created by Jack Howard on 8/3/25.
-//
-
 import SwiftUI
 import WeatherKit
 import CoreLocation
 
 struct ContentView: View {
-    @State private var temperatureF: String = "Loading..."
-    @State private var temperatureC: String = "Loading..."
+    @State private var temperatureF: String = "—"
+    @State private var temperatureC: String = "—"
+    @State private var cityName: String = "Locating…"
+    @State private var hasFetchedWeather = false
+    @StateObject private var locationManager = LocationManager()
 
     let weatherService = WeatherService()
-    let location = CLLocation(latitude: 31, longitude: 121)
+    let geocoder = CLGeocoder()
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text(temperatureF)
-            Text(temperatureC)
+        ScrollView {
+            VStack(spacing: 24) {
+                WeatherCardView(
+                    city: cityName,
+                    temperatureF: temperatureF,
+                    temperatureC: temperatureC
+                )
+            }
+            .padding()
         }
-        .padding()
         .task {
+            guard !hasFetchedWeather else { return }
+
+            while locationManager.location == nil {
+                try? await Task.sleep(nanoseconds: 300_000_000)
+            }
+
             await fetchWeather()
+            hasFetchedWeather = true
         }
     }
 
     func fetchWeather() async {
+        guard let location = locationManager.location else { return }
+
         do {
             let weather = try await weatherService.weather(for: location)
             let temp = weather.currentWeather.temperature
 
-            // Round to whole number
             let numberStyle = FloatingPointFormatStyle<Double>().precision(.fractionLength(0))
 
             let styleF = Measurement<UnitTemperature>.FormatStyle(
@@ -52,17 +61,16 @@ struct ContentView: View {
             temperatureF = temp.converted(to: .fahrenheit).formatted(styleF)
             temperatureC = temp.converted(to: .celsius).formatted(styleC)
 
-            print("F: \(temperatureF)")
-            print("C: \(temperatureC)")
+            if let placemark = try? await geocoder.reverseGeocodeLocation(location).first {
+                cityName = placemark.locality ?? "Unknown City"
+            } else {
+                cityName = "Unknown Location"
+            }
 
         } catch {
             temperatureF = "Error"
             temperatureC = "Error"
-            print("Failed to get weather: \(error.localizedDescription)")
+            cityName = "Error"
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

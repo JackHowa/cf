@@ -14,6 +14,8 @@ struct ContentView: View {
     @State private var temperatureC: String = "—"
     @State private var cityName: String = "Locating…"
     @State private var hasFetchedWeather = false
+    @State private var lastUpdated: Date? = nil
+
     @StateObject private var locationManager = LocationManager()
 
     let weatherService = WeatherService()
@@ -25,10 +27,14 @@ struct ContentView: View {
                 WeatherCardView(
                     city: cityName,
                     temperatureF: temperatureF,
-                    temperatureC: temperatureC
+                    temperatureC: temperatureC,
+                    lastUpdated: lastUpdated
                 )
             }
             .padding()
+        }
+        .refreshable {
+            await fetchWeather()
         }
         .task {
             guard !hasFetchedWeather else { return }
@@ -79,5 +85,7 @@ struct ContentView: View {
             temperatureC = "Error"
             cityName = "Error"
         }
+        lastUpdated = Date()
+
     }
 }

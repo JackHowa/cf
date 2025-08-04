@@ -10,9 +10,16 @@ struct WeatherCardView: View {
     let city: String
     let temperatureF: String
     let temperatureC: String
+    let lastUpdated: Date?
 
     var body: some View {
         VStack(spacing: 16) {
+            if let lastUpdated {
+                Text("Last updated: \(lastUpdated.formatted(date: .omitted, time: .shortened))")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+            }
+
             Text(city)
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -48,5 +55,6 @@ struct WeatherCardView: View {
                 .shadow(radius: 10)
         )
         .padding(.horizontal)
+        
     }
 }

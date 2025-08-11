@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ED8E396C2E49940700E3BE60 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8E392F2E49904E00E3BE60 /* WidgetKit.framework */; };
+		ED8E396D2E49940700E3BE60 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8E39312E49904E00E3BE60 /* SwiftUI.framework */; };
+		ED8E397E2E49940800E3BE60 /* cfwidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ED8E396B2E49940700E3BE60 /* cfwidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		ED5A531C2E4033590059A850 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,12 +27,37 @@
 			remoteGlobalIDString = ED5A530C2E4033570059A850;
 			remoteInfo = cf;
 		};
+		ED8E397C2E49940800E3BE60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED5A53052E4033570059A850 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED8E396A2E49940700E3BE60;
+			remoteInfo = cfwidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED8E39452E49905000E3BE60 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ED8E397E2E49940800E3BE60 /* cfwidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED5A530D2E4033570059A850 /* cf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5A531B2E4033590059A850 /* cfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5A53252E4033590059A850 /* cfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8E392F2E49904E00E3BE60 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		ED8E39312E49904E00E3BE60 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		ED8E396B2E49940700E3BE60 /* cfwidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = cfwidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8E39832E49941500E3BE60 /* cfwidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cfwidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +67,13 @@
 				Info.plist,
 			);
 			target = ED5A530C2E4033570059A850 /* cf */;
+		};
+		ED8E39822E49940800E3BE60 /* Exceptions for "cfwidget" folder in "cfwidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = ED8E396A2E49940700E3BE60 /* cfwidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -56,6 +94,14 @@
 		ED5A53282E4033590059A850 /* cfUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = cfUITests;
+			sourceTree = "<group>";
+		};
+		ED8E396E2E49940700E3BE60 /* cfwidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ED8E39822E49940800E3BE60 /* Exceptions for "cfwidget" folder in "cfwidgetExtension" target */,
+			);
+			path = cfwidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -82,15 +128,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED8E39682E49940700E3BE60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED8E396D2E49940700E3BE60 /* SwiftUI.framework in Frameworks */,
+				ED8E396C2E49940700E3BE60 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		ED5A53042E4033570059A850 = {
 			isa = PBXGroup;
 			children = (
+				ED8E39832E49941500E3BE60 /* cfwidgetExtension.entitlements */,
 				ED5A530F2E4033570059A850 /* cf */,
 				ED5A531E2E4033590059A850 /* cfTests */,
 				ED5A53282E4033590059A850 /* cfUITests */,
+				ED8E396E2E49940700E3BE60 /* cfwidget */,
+				ED8E392E2E49904E00E3BE60 /* Frameworks */,
 				ED5A530E2E4033570059A850 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,8 +159,18 @@
 				ED5A530D2E4033570059A850 /* cf.app */,
 				ED5A531B2E4033590059A850 /* cfTests.xctest */,
 				ED5A53252E4033590059A850 /* cfUITests.xctest */,
+				ED8E396B2E49940700E3BE60 /* cfwidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ED8E392E2E49904E00E3BE60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E392F2E49904E00E3BE60 /* WidgetKit.framework */,
+				ED8E39312E49904E00E3BE60 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,10 +183,12 @@
 				ED5A53092E4033570059A850 /* Sources */,
 				ED5A530A2E4033570059A850 /* Frameworks */,
 				ED5A530B2E4033570059A850 /* Resources */,
+				ED8E39452E49905000E3BE60 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED8E397D2E49940800E3BE60 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				ED5A530F2E4033570059A850 /* cf */,
@@ -176,6 +246,28 @@
 			productReference = ED5A53252E4033590059A850 /* cfUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		ED8E396A2E49940700E3BE60 /* cfwidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED8E397F2E49940800E3BE60 /* Build configuration list for PBXNativeTarget "cfwidgetExtension" */;
+			buildPhases = (
+				ED8E39672E49940700E3BE60 /* Sources */,
+				ED8E39682E49940700E3BE60 /* Frameworks */,
+				ED8E39692E49940700E3BE60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ED8E396E2E49940700E3BE60 /* cfwidget */,
+			);
+			name = cfwidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = cfwidgetExtension;
+			productReference = ED8E396B2E49940700E3BE60 /* cfwidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +289,9 @@
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = ED5A530C2E4033570059A850;
 					};
+					ED8E396A2E49940700E3BE60 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 				};
 			};
 			buildConfigurationList = ED5A53082E4033570059A850 /* Build configuration list for PBXProject "cf" */;
@@ -216,6 +311,7 @@
 				ED5A530C2E4033570059A850 /* cf */,
 				ED5A531A2E4033590059A850 /* cfTests */,
 				ED5A53242E4033590059A850 /* cfUITests */,
+				ED8E396A2E49940700E3BE60 /* cfwidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +332,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ED5A53232E4033590059A850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED8E39692E49940700E3BE60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +369,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED8E39672E49940700E3BE60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -278,6 +388,11 @@
 			isa = PBXTargetDependency;
 			target = ED5A530C2E4033570059A850 /* cf */;
 			targetProxy = ED5A53262E4033590059A850 /* PBXContainerItemProxy */;
+		};
+		ED8E397D2E49940800E3BE60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED8E396A2E49940700E3BE60 /* cfwidgetExtension */;
+			targetProxy = ED8E397C2E49940800E3BE60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -574,6 +689,67 @@
 			};
 			name = Release;
 		};
+		ED8E39802E49940800E3BE60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = cfwidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G4EK3R8SZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cfwidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = cfwidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thrash-industries.cf.cfwidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED8E39812E49940800E3BE60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = cfwidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G4EK3R8SZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cfwidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = cfwidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thrash-industries.cf.cfwidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -609,6 +785,15 @@
 			buildConfigurations = (
 				ED5A53362E4033590059A850 /* Debug */,
 				ED5A53372E4033590059A850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED8E397F2E49940800E3BE60 /* Build configuration list for PBXNativeTarget "cfwidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED8E39802E49940800E3BE60 /* Debug */,
+				ED8E39812E49940800E3BE60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

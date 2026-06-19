@@ -1,10 +1,3 @@
-//
-//  LocationManager.swift
-//  cf
-//
-//  Created by Jack Howard on 8/3/25.
-//
-
 import Foundation
 import CoreLocation
 

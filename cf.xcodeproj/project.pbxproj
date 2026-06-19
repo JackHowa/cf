@@ -440,7 +440,6 @@
 				NSLocationWhenInUseUsageDescription = "This app needs your location to show weather data.";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thrash-industries.cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -488,7 +487,6 @@
 				NSLocationWhenInUseUsageDescription = "This app needs your location to show weather data.";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thrash-industries.cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;

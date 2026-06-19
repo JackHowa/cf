@@ -21,16 +21,5 @@
 			</array>
 		</dict>
 	</array>
-	<key>NSPrivacyAccessedAPITypes</key>
-	<array>
-		<dict>
-			<key>NSPrivacyAccessedAPIType</key>
-			<string>NSPrivacyAccessedAPICategoryLocation</string>
-			<key>NSPrivacyAccessedAPITypeReasons</key>
-			<array>
-				<string>3.1</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>

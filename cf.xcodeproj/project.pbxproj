@@ -439,6 +439,7 @@
 				NEW_SETTING = "";
 				NSLocationWhenInUseUsageDescription = "This app needs your location to show weather data.";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thrash-industries.cf";
+				INFOPLIST_KEY_CFBundleDisplayName = "weather-cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -486,6 +487,7 @@
 				NEW_SETTING = "";
 				NSLocationWhenInUseUsageDescription = "This app needs your location to show weather data.";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thrash-industries.cf";
+				INFOPLIST_KEY_CFBundleDisplayName = "weather-cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -509,6 +511,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.thrash-industries.cfTests";
+				INFOPLIST_KEY_CFBundleDisplayName = "weather-cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -533,6 +536,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.thrash-industries.cfTests";
+				INFOPLIST_KEY_CFBundleDisplayName = "weather-cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -556,6 +560,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.thrash-industries.cfUITests";
+				INFOPLIST_KEY_CFBundleDisplayName = "weather-cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -579,6 +584,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "name.thrash-industries.cfUITests";
+				INFOPLIST_KEY_CFBundleDisplayName = "weather-cf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
